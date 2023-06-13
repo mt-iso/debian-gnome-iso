@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          sudo bash debian-cinnamon.sh
+          sudo mkdir -p /output
+          sudo mv debian-cinnamon.iso /output/debian-cinnamon.iso
+
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "main"
+          prerelease: false
+          title: "Daily build"
+          files: |
+            /output/*
