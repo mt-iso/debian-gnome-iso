@@ -35,7 +35,7 @@ chroot kaynak apt-get install xorg xinit lightdm -y
 chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
 ### Xfce ve gerekli araçları kuralım
-chroot kaynak apt-get install cinnamon wget -y
+chroot kaynak apt-get install cinnamon wget gnome-weather gnome-clocks gnome-screenshot gedit baobab zstd eog orchis-gtk-theme -y
 chroot kaynak apt-get install network-manager-gnome gvfs-backends -y
 
 ### İsteğe bağlı paketleri kuralım
@@ -51,6 +51,7 @@ chroot kaynak rm 17g-installer_1.0_all.deb
 
 ### zorunlu kurulu gelen paketleri silelim (isteğe bağlı)
 chroot kaynak apt-get remove xterm termit xarchiver -y
+chroot kaynak rm -rf /usr/share/backgrounds/gnome
 
 ### Zorunlu değil ama grub güncelleyelim
 chroot kaynak update-grub
