@@ -34,12 +34,12 @@ chroot kaynak apt-get install xorg xinit lightdm -y
 ### firmware paketleri için (Burada kendi donanımınıza göre tercih yapabilirsiniz!) 
 chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
-### Xfce ve gerekli araçları kuralım
-chroot kaynak apt-get install cinnamon wget gnome-weather gnome-clocks gnome-screenshot gedit baobab zstd eog orchis-gtk-theme -y
-chroot kaynak apt-get install network-manager-gnome gvfs-backends -y
-
-### İsteğe bağlı paketleri kuralım
-chroot kaynak apt-get install inxi gnome-calculator file-roller synaptic chromium chromium-l10n -y
+### Masaüstü ortamı ve gerekli araçları kuralım
+chroot kaynak apt-get install cinnamon synaptic gedit gnome-software -y
+chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard -y
+chroot kaynak apt-get install orchis-gtk-theme papirus-icon-theme -y
+chroot kaynak apt-get install wget chromium chromium-l10n -y
+chroot kaynak apt-get install network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
 chroot kaynak apt-get install printer-driver-all system-config-printer simple-scan blueman -y
