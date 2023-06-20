@@ -10,7 +10,7 @@ mkdir kaynak
 chown root kaynak
 
 ### Testing için
-debootstrap --arch=amd64 testing kaynak https://deb.debian.org/debian
+debootstrap --arch=amd64 testing kaynak http://deb.debian.org/debian
 
 ### bind bağı için
 for i in dev dev/pts proc sys; do mount -o bind /$i kaynak/$i; done
