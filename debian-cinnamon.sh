@@ -18,7 +18,7 @@ for i in dev dev/pts proc sys; do mount -o bind /$i kaynak/$i; done
 ### Depo eklemek için
 echo 'deb http://deb.debian.org/debian testing main contrib non-free non-free-firmware' > kaynak/etc/apt/sources.list
 echo 'deb http://deb.librewolf.net bookworm main' > kaynak/etc/apt/sources.list.d/librewolf.list
-chroot kaynak wget https://deb.librewolf.net/keyring.gpg -O /etc/apt/trusted.gpg.d/librewolf.gpg
+wget https://deb.librewolf.net/keyring.gpg -O kaynak/etc/apt/trusted.gpg.d/librewolf.gpg
 chroot kaynak apt-get update
 
 ### kernel paketini kuralım
