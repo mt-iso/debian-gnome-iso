@@ -3,14 +3,14 @@
 ### Debian Testing Live Unofficial ISO build
 
 ### gerekli paketler
-apt-get install debootstrap xorriso squashfs-tools mtools grub-pc-bin grub-efi-amd64 -y
+apt install debootstrap xorriso squashfs-tools mtools grub-pc-bin grub-efi-amd64 -y
 
 ### Chroot oluşturmak için
 mkdir kaynak
 chown root kaynak
 
 ### Testing için
-debootstrap --arch=amd64 testing kaynak http://deb.debian.org/debian
+debootstrap --arch=amd64 testing kaynak https://deb.debian.org/debian
 
 ### bind bağı için
 for i in dev dev/pts proc sys; do mount -o bind /$i kaynak/$i; done
@@ -66,8 +66,8 @@ chroot kaynak apt-get upgrade -y
 umount -lf -R kaynak/* 2>/dev/null
 
 ### temizlik işlemleri
-chroot kaynak apt-get autoremove
-chroot kaynak apt-get clean
+chroot kaynak apt autoremove
+chroot kaynak apt clean
 rm -f kaynak/root/.bash_history
 rm -rf kaynak/var/lib/apt/lists/*
 find kaynak/var/log/ -type f | xargs rm -f
