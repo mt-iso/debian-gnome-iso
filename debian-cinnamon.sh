@@ -34,11 +34,17 @@ chroot kaynak apt-get install xorg xinit lightdm -y
 ### firmware paketleri için (Burada kendi donanımınıza göre tercih yapabilirsiniz!) 
 chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
+### Librewolf kurulumu
+chroot kaynak echo "deb http://deb.librewolf.net bullseye main" | tee /etc/apt/sources.list.d/librewolf.list
+chroot kaynak wget https://deb.librewolf.net/keyring.gpg -O /etc/apt/trusted.gpg.d/librewolf.gpg 
+chroot kaynak apt-get update
+chroot kaynak apt-get install librewolf -y
+
 ### Masaüstü ortamı ve gerekli araçları kuralım
 chroot kaynak apt-get install cinnamon synaptic gedit -y
-chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard -y
+chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog wget onboard ffmpeg -y
 chroot kaynak apt-get install orchis-gtk-theme papirus-icon-theme -y
-chroot kaynak apt-get install wget chromium chromium-l10n -y
+#chroot kaynak apt-get install chromium chromium-l10n -y
 chroot kaynak apt-get install network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
