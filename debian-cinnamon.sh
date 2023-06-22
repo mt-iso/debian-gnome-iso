@@ -17,8 +17,6 @@ for i in dev dev/pts proc sys; do mount -o bind /$i kaynak/$i; done
 
 ### Depo eklemek için
 echo 'deb http://deb.debian.org/debian testing main contrib non-free non-free-firmware' > kaynak/etc/apt/sources.list
-echo 'deb http://deb.librewolf.net bookworm main' > kaynak/etc/apt/sources.list.d/librewolf.list
-wget https://deb.librewolf.net/keyring.gpg -O kaynak/etc/apt/trusted.gpg.d/librewolf.gpg
 chroot kaynak apt-get update
 
 ### kernel paketini kuralım
@@ -38,9 +36,9 @@ chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-
 
 ### Masaüstü ortamı ve gerekli araçları kuralım
 chroot kaynak apt-get install cinnamon synaptic gedit -y
-chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog wget onboard ffmpeg -y
+chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
 chroot kaynak apt-get install orchis-gtk-theme papirus-icon-theme -y
-chroot kaynak apt-get install librewolf -y #chromium chromium-l10n
+chroot kaynak apt-get install wget chromium chromium-l10n
 chroot kaynak apt-get install network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
