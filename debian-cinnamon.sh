@@ -38,7 +38,7 @@ chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-
 chroot kaynak apt-get install cinnamon synaptic gedit -y
 chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
 chroot kaynak apt-get install orchis-gtk-theme papirus-icon-theme -y
-chroot kaynak apt-get install wget chromium chromium-l10n
+chroot kaynak apt-get install wget chromium chromium-l10n -y
 chroot kaynak apt-get install network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
