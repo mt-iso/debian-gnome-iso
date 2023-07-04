@@ -17,45 +17,45 @@ for i in dev dev/pts proc sys; do mount -o bind /$i kaynak/$i; done
 
 ### Depo eklemek için
 echo 'deb http://deb.debian.org/debian testing main contrib non-free non-free-firmware' > kaynak/etc/apt/sources.list
-chroot kaynak apt-get update
+chroot kaynak apt update
 
 ### kernel paketini kuralım
-chroot kaynak apt-get install linux-image-amd64 -y
+chroot kaynak apt install linux-image-amd64 -y
 
 ### grub paketleri için
-chroot kaynak apt-get install grub-pc-bin grub-efi-ia32-bin grub-efi -y
+chroot kaynak apt install grub-pc-bin grub-efi-ia32-bin grub-efi -y
 
 ### live paketleri için
-chroot kaynak apt-get install live-config live-boot -y 
+chroot kaynak apt install live-config live-boot -y 
 
 ### init paketleri için
-chroot kaynak apt-get install xorg xinit lightdm -y
+chroot kaynak apt install xorg xinit lightdm -y
 
 ### firmware paketleri için (Burada kendi donanımınıza göre tercih yapabilirsiniz!) 
-chroot kaynak apt-get install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
+chroot kaynak apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
 ### Masaüstü ortamı ve gerekli araçları kuralım
-chroot kaynak apt-get install cinnamon synaptic gedit -y
-chroot kaynak apt-get install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
-chroot kaynak apt-get install orchis-gtk-theme papirus-icon-theme -y
-chroot kaynak apt-get install wget chromium chromium-l10n -y
-chroot kaynak apt-get install network-manager-gnome gvfs-backends inxi -y
+chroot kaynak apt install cinnamon synaptic gedit -y
+chroot kaynak apt install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
+chroot kaynak apt install orchis-gtk-theme papirus-icon-theme -y
+chroot kaynak apt install wget chromium chromium-l10n -y
+chroot kaynak apt install network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
-chroot kaynak apt-get install printer-driver-all system-config-printer simple-scan blueman -y
+chroot kaynak apt install printer-driver-all system-config-printer simple-scan blueman -y
 
 ### Depo dışı paket kurma
 chroot kaynak wget https://github.com/muslimos/17g-installer/releases/download/current/17g-installer_1.0_all.deb
-chroot kaynak apt-get install ./17g-installer_1.0_all.deb -y
+chroot kaynak apt install ./17g-installer_1.0_all.deb -y
 chroot kaynak rm 17g-installer_1.0_all.deb
 
 ### zorunlu kurulu gelen paketleri silelim (isteğe bağlı)
-chroot kaynak apt-get remove xterm termit xarchiver -y
+chroot kaynak apt remove xterm termit xarchiver -y
 chroot kaynak rm -rf /usr/share/backgrounds/gnome
 
 ### Zorunlu değil ama grub güncelleyelim
 chroot kaynak update-grub
-chroot kaynak apt-get upgrade -y
+chroot kaynak apt upgrade -y
 
 umount -lf -R kaynak/* 2>/dev/null
 
