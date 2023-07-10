@@ -36,7 +36,7 @@ chroot kaynak apt install xorg xinit lightdm -y
 chroot kaynak apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
 ### Masaüstü ortamı ve gerekli araçları kuralım
-chroot kaynak apt install budgie-desktop synaptic gedit -y
+chroot kaynak apt install cinnamon synaptic gedit -y
 chroot kaynak apt install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
 chroot kaynak apt install orchis-gtk-theme papirus-icon-theme -y
 chroot kaynak apt install wget chromium chromium-l10n -y
