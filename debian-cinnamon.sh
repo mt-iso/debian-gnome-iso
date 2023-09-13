@@ -46,9 +46,12 @@ chroot kaynak apt install network-manager-gnome gvfs-backends inxi -y
 chroot kaynak apt install printer-driver-all system-config-printer simple-scan blueman -y
 
 ### Depo dışı paket kurma
+chroot kaynak cd /tmp
 chroot kaynak wget https://github.com/mt-iso/debhane/raw/main/17g-installer_1.0_all.deb
-chroot kaynak apt install ./17g-installer_1.0_all.deb -y
-chroot kaynak rm 17g-installer_1.0_all.deb
+chroot kaynak wget https://github.com/mt-iso/debhane/raw/main/qmplay2_23.08.22-1-amd64.deb
+chroot kaynak wget https://github.com/mt-iso/debhane/raw/main/pardus-package-installer_0.6.0_all.deb
+chroot kaynak apt install ./*.deb -y
+chroot kaynak cd ..
 
 ### zorunlu kurulu gelen paketleri silelim (isteğe bağlı)
 chroot kaynak apt remove xterm termit xarchiver -y
