@@ -30,17 +30,16 @@ chroot kaynak apt install grub-pc-bin grub-efi-ia32-bin grub-efi -y
 chroot kaynak apt install live-config live-boot -y 
 
 ### init paketleri için
-chroot kaynak apt install xorg xinit lightdm -y
+#chroot kaynak apt install xorg xinit lightdm -y
 
 ### firmware paketleri için (Burada kendi donanımınıza göre tercih yapabilirsiniz!) 
 chroot kaynak apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
 ### Masaüstü ortamı ve gerekli araçları kuralım
-chroot kaynak apt install cinnamon synaptic gedit -y
-chroot kaynak apt install file-roller gnome-calculator gnome-weather gnome-clocks gnome-screenshot baobab zstd eog onboard ffmpeg -y
-chroot kaynak apt install orchis-gtk-theme papirus-icon-theme -y
+chroot kaynak apt install file-roller gnome-calculator gnome-weather gnome-clocks gnome-music gnome-screenshot baobab zstd eog onboard ffmpeg -y
+chroot kaynak apt install papirus-icon-theme -y
 chroot kaynak apt install wget chromium chromium-l10n -y
-chroot kaynak apt install network-manager-gnome gvfs-backends inxi -y
+chroot kaynak apt install gnome-core network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
 chroot kaynak apt install printer-driver-all system-config-printer simple-scan blueman -y
