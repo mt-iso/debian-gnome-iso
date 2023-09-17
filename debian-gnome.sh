@@ -36,10 +36,10 @@ chroot kaynak apt install live-config live-boot -y
 chroot kaynak apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
 
 ### Masaüstü ortamı ve gerekli araçları kuralım
-chroot kaynak apt install file-roller gnome-calculator gnome-weather gnome-clocks gnome-music gnome-screenshot baobab zstd eog onboard ffmpeg -y
+chroot kaynak apt install gnome-terminal gnome-calculator gnome-weather gnome-clocks gnome-music gnome-screenshot file-roller baobab zstd eog onboard ffmpeg -y
 chroot kaynak apt install papirus-icon-theme -y
 chroot kaynak apt install wget chromium chromium-l10n -y
-chroot kaynak apt install gnome-core network-manager-gnome gvfs-backends inxi -y
+chroot kaynak apt install gnome-core gnome-tweaks network-manager-gnome gvfs-backends inxi -y
 
 ### Yazıcı tarayıcı ve bluetooth paketlerini kuralım (isteğe bağlı)
 chroot kaynak apt install printer-driver-all system-config-printer simple-scan blueman -y
@@ -84,4 +84,4 @@ echo '    initrd /live/initrd.img' >> isowork/boot/grub/grub.cfg
 echo '}' >> isowork/boot/grub/grub.cfg
 
 echo "ISO oluşturuluyor.."
-grub-mkrescue isowork -o debian-cinnamon.iso
+grub-mkrescue isowork -o debian-gnome.iso
