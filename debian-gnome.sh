@@ -30,7 +30,7 @@ chroot kaynak apt install grub-pc-bin grub-efi-ia32-bin grub-efi -y
 chroot kaynak apt install live-config live-boot -y 
 
 ### init paketleri için
-#chroot kaynak apt install xorg xinit lightdm -y
+chroot kaynak apt install xorg xinit -y
 
 ### firmware paketleri için (Burada kendi donanımınıza göre tercih yapabilirsiniz!) 
 chroot kaynak apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware -y
