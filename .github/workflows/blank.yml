@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: build
         run: |
-          sudo bash debian-cinnamon.sh
+          sudo bash debian-gnome.sh
           sudo mkdir -p /output
           sudo mv debian-gnome.iso /output/debian-gnome.iso
 
